@@ -3,7 +3,7 @@ package com.BancoDeSangue.model;
 import java.util.Arrays;
 import java.util.List;
 
-public enum Estados {
+public enum Estado {
 	AC("Acre"),
 
 	AL("Alagoas"),
@@ -58,11 +58,15 @@ public enum Estados {
 
 	private String nome;
 
-	Estados(String nome) {
+	Estado(String nome) {
 		this.nome = nome;
 	}
 
-	static List<TipoSanguineo> obterLitaDeEstados(){
-		return Arrays.asList(TipoSanguineo.values());
+	public static List<Estado> obterLitaDeEstados(){
+		return Arrays.asList(Estado.values());
+	}
+
+	public String getNome() {
+		return nome;
 	}
 }

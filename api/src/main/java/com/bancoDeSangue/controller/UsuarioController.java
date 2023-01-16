@@ -5,30 +5,39 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.BancoDeSangue.dtos.request.CreateNewUserRequest;
-import com.BancoDeSangue.service.impl.CriarNovoUsuarioServiceImpl;
+import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.BancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
+import com.BancoDeSangue.dtos.response.UsuarioResponse;
+import com.BancoDeSangue.service.UsuarioAutenticadoResponseService;
+import com.BancoDeSangue.service.UsuariosPorEstadoService;
+import com.BancoDeSangue.service.impl.NovoUsuarioServiceImpl;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
-public class UserController {
-	private final CriarNovoUsuarioServiceImpl createNewUserService;
+public class UsuarioController {
+	private final NovoUsuarioServiceImpl createNewUserService;
+
+	private final UsuariosPorEstadoService usuariosPorEstadoService;
+
+	private final UsuarioAutenticadoResponseService usuarioAutenticadoResponseService;
 
 	@PostMapping("/criar")
-	public ResponseEntity<Long> create(@Valid @RequestBody CreateNewUserRequest request) {
-		Long idUsuario = createNewUserService.create(request);
+	public ResponseEntity<Long> create(@Valid @RequestBody CriarNovoUsuarioRequest request) {
+		Long idUsuario = createNewUserService.criar(request);
 		return ResponseEntity.ok(idUsuario);
 	}
 
 	@PostMapping("/criarLista")
-	public ResponseEntity<List<Long>> create(@Valid @RequestBody List<CreateNewUserRequest> request) {
-		List<Long> idUsuarios = createNewUserService.create(request);
+	public ResponseEntity<List<Long>> create(@Valid @RequestBody List<CriarNovoUsuarioRequest> request) {
+		List<Long> idUsuarios = createNewUserService.criar(request);
 		return ResponseEntity.ok(idUsuarios);
 	}
 
@@ -36,5 +45,17 @@ public class UserController {
 	@PostMapping("/login")
 	public ResponseEntity<Object> login() {
 		return ResponseEntity.noContent().build();
+	}
+
+
+	@GetMapping("/usuarioAutenticado")
+	public ResponseEntity<UsuarioResponse> obterTodosUsuariosPorEstado(){
+		UsuarioResponse listaUsuarioResponse = usuarioAutenticadoResponseService.obter();
+		return ResponseEntity.ok(listaUsuarioResponse);
+	}
+	@GetMapping("/estado")
+	public ResponseEntity<List<UsuarioResponse>> obterTodosUsuariosPorEstado(@RequestBody ObterTodosUsuariosPorEstadoRequest request){
+		List<UsuarioResponse> listaUsuarioResponse = usuariosPorEstadoService.obter(request);
+		return ResponseEntity.ok(listaUsuarioResponse);
 	}
 }

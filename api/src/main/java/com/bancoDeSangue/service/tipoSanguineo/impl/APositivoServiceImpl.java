@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.tipoSanguineo;
+package com.BancoDeSangue.service.tipoSanguineo.impl;
 
 import static com.BancoDeSangue.model.TipoSanguineo.A_B_POSITIVO;
 import static com.BancoDeSangue.model.TipoSanguineo.A_NEGATIVO;
@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.BancoDeSangue.model.TipoSanguineo;
+import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
 
 @Service
 public class APositivoServiceImpl implements TipoSanguineoService {

@@ -3,13 +3,13 @@ package com.BancoDeSangue.dtos.request;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
-
+import com.BancoDeSangue.model.Estado;
 import lombok.Data;
 
 @Data
-public class CreateNewUserRequest {
+public class CriarNovoUsuarioRequest {
     @NotEmpty
     private String nome;
 
@@ -20,8 +20,10 @@ public class CreateNewUserRequest {
     private String  senha = "123456";
 
     @NotBlank
-    @Size(max = 11, min = 14)
     private String Cpf;
+
+    @NotBlank
+    private String rg;
 
     @NotBlank
     private String data_nasc;
@@ -47,8 +49,8 @@ public class CreateNewUserRequest {
     @NotBlank
     private String cidade;
 
-    @NotBlank
-    private String estado;
+    @NotNull
+    private Estado estado;
 
     @NotBlank
     private String telefone_fixo;

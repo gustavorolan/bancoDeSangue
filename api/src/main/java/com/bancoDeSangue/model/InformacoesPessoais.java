@@ -47,7 +47,8 @@ public class InformacoesPessoais {
 	private String data_nasc;
 
 	@Column(nullable = false)
-	private String sexo;
+	@Enumerated(EnumType.STRING)
+	private Sexo sexo;
 
 	@Column(nullable = false)
 	private Double altura;

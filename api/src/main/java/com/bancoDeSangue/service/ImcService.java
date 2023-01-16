@@ -1,7 +1,7 @@
-package com.BancoDeSangue.service.imc;
+package com.BancoDeSangue.service;
+
+import com.BancoDeSangue.model.Usuario;
 
 public interface ImcService {
-	double calcular(String peso, String altura);
-
-	boolean isObeso(String peso, String altura);
+	Usuario preencher(Usuario usuario);
 }

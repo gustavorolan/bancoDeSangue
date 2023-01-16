@@ -1,16 +1,27 @@
-package com.BancoDeSangue.service.imc.impl;
+package com.BancoDeSangue.service.impl;
 
-import com.BancoDeSangue.service.imc.ImcService;
+import org.springframework.stereotype.Service;
 
+import com.BancoDeSangue.model.InformacoesPessoais;
+import com.BancoDeSangue.model.Usuario;
+import com.BancoDeSangue.service.ImcService;
+
+@Service
 public class ImcServiceImpl implements ImcService {
 	@Override
-	public double calcular(String peso, String altura) {
-		return Double.parseDouble(peso) / Math.pow(Double.parseDouble(altura), 2);
+	public Usuario preencher(Usuario usuario){
+		InformacoesPessoais informacoesPessoais = usuario.getInformacoesPessoais();
+		double imc = calcular(informacoesPessoais.getPeso(), informacoesPessoais.getAltura());
+		usuario.setImc(imc);
+		usuario.setObeso(isObeso(imc));
+		return usuario;
 	}
 
-	@Override
-	public boolean isObeso(String peso, String altura) {
-		double imc = calcular(peso, altura);
+	private double calcular(Double peso, Double altura) {
+		return peso / Math.pow(altura, 2);
+	}
+
+	private boolean isObeso(double imc) {
 		return imc > 30;
 	}
 }

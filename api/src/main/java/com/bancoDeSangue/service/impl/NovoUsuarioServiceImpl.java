@@ -6,40 +6,52 @@ import java.util.stream.Collectors;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.request.CreateNewUserRequest;
+import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
 import com.BancoDeSangue.mapper.UsuarioMapper;
 import com.BancoDeSangue.model.Usuario;
 import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.CriarNovoUsuarioService;
+import com.BancoDeSangue.service.DoarService;
+import com.BancoDeSangue.service.IdadeService;
+import com.BancoDeSangue.service.NovoUsuarioService;
+import com.BancoDeSangue.service.ImcService;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class CriarNovoUsuarioServiceImpl implements CriarNovoUsuarioService {
+public class NovoUsuarioServiceImpl implements NovoUsuarioService {
 
-    private final UsuarioMapper usuarioMapper;
-    private final UsuarioRepository usuarioRepository;
-    private final PasswordEncoder passwordEncoder;
+	private final UsuarioMapper usuarioMapper;
+	private final UsuarioRepository usuarioRepository;
+	private final PasswordEncoder passwordEncoder;
+	private final IdadeService idadeService;
 
-    public Long create(CreateNewUserRequest request) {
+	private final DoarService doarService;
+	private final ImcService imcService;
 
-        String passwordEncoded = passwordEncoder.encode(request.getSenha());
+	public Long criar(CriarNovoUsuarioRequest request) {
 
-        request.setSenha(passwordEncoded);
+		String passwordEncoded = passwordEncoder.encode(request.getSenha());
 
-        Usuario usuario = usuarioMapper.toEntity(request);
-        
-        usuario.getInformacoesPessoais().setUsuario(usuario);
-        usuario.getEndereco().setUsuario(usuario);
-        usuario.getContato().setUsuario(usuario);
+		request.setSenha(passwordEncoded);
 
-        usuarioRepository.save(usuario);
+		Usuario usuario = usuarioMapper.toEntity(request);
 
-        return usuario.getId();
-    }
+		Usuario usuarioComIdade = idadeService.preencher(usuario);
 
-    @Override
-    public List<Long> create(List<CreateNewUserRequest> request) {
-        return request.stream().map(this::create).collect(Collectors.toList());
-    }
+		Usuario usuarioComImc = imcService.preencher(usuarioComIdade);
+
+		Usuario usuarioComIsPermitidoDoar = doarService.preencher(usuarioComImc);
+
+		usuarioRepository.save(usuarioComIsPermitidoDoar);
+
+		return usuario.getId();
+	}
+
+
+	@Override
+	public List<Long> criar(List<CriarNovoUsuarioRequest> request) {
+		return request.stream()
+				.map(this::criar)
+				.collect(Collectors.toList());
+	}
 }

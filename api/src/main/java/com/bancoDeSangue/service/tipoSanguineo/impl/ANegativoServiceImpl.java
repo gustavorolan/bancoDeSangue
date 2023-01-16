@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.tipoSanguineo;
+package com.BancoDeSangue.service.tipoSanguineo.impl;
 
 import static com.BancoDeSangue.model.TipoSanguineo.A_B_NEGATIVO;
 import static com.BancoDeSangue.model.TipoSanguineo.A_B_POSITIVO;
@@ -8,8 +8,12 @@ import static com.BancoDeSangue.model.TipoSanguineo.O_NEGATIVO;
 
 import java.util.List;
 
-import com.BancoDeSangue.model.TipoSanguineo;
+import org.springframework.stereotype.Service;
 
+import com.BancoDeSangue.model.TipoSanguineo;
+import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
+
+@Service
 public class ANegativoServiceImpl implements TipoSanguineoService {
 	@Override
 	public List<TipoSanguineo> obterListaPossivelDoar(TipoSanguineo tipoSanguineo) {

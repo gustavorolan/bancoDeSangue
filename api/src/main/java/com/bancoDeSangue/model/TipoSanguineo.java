@@ -23,12 +23,16 @@ public enum TipoSanguineo {
 		return tiposSanguineos.get(sigla);
 	}
 
-	static HashMap<String, TipoSanguineo> obterLitaDeTiposSanguineos(){
+	public static HashMap<String, TipoSanguineo> obterLitaDeTiposSanguineos(){
 		HashMap<String, TipoSanguineo> tipoSanguineos = new HashMap<>();
 		 Arrays.stream(TipoSanguineo.values())
 				 .forEach(tipoSanguineo ->
 						 tipoSanguineos.put(tipoSanguineo.sigla,tipoSanguineo)
 				 );
 		return tipoSanguineos;
+	}
+
+	public String getSigla() {
+		return sigla;
 	}
 }
