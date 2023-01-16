@@ -12,64 +12,63 @@ import lombok.Data;
 @Data
 @Builder
 public class CriarNovoUsuarioRequest {
-    @NotEmpty
+    @NotEmpty(message = "Nome deve ser preenchido")
     private String nome;
 
-    @Email
+    @Email(message = "Email deve ser preenchido")
     private String email;
 
-    @NotEmpty
     private String  senha = "123456";
 
-    @NotBlank
+    @NotBlank(message = "Cpf deve ser preenchido")
     private String Cpf;
 
-    @NotBlank
+    @NotBlank(message = "Rg deve ser preenchido")
     private String rg;
 
-    @NotBlank
+    @NotBlank(message = "Data nascimento deve ser preenchido")
     private String data_nasc;
 
-    @NotBlank
+    @NotBlank(message = "Sexo deve ser preenchido")
     private String sexo;
 
-    @NotBlank
+    @NotBlank(message = "Mae deve ser preenchido")
     private String mae;
 
-    @NotBlank
+    @NotBlank(message = "Pai deve ser preenchido")
     private String pai;
 
-    @NotBlank
+    @NotBlank(message = "Cep deve ser preenchido")
     private String cep;
 
-    @NotBlank
+    @NotBlank(message = "Endereco deve ser preenchido")
     private String endereco;
 
-    @NotNull
+    @NotNull(message = "Numero deve ser preenchido")
     private Integer numero;
 
-    @NotBlank
+    @NotBlank(message = "Bairro deve ser preenchido")
     private String bairro;
 
-    @NotBlank
+    @NotBlank(message = "Cidade deve ser preenchido")
     private String cidade;
 
-    @NotNull
+    @NotNull(message = "Estado deve ser preenchido")
     private Estado estado;
 
-    @NotBlank
+    @NotBlank(message = "Telefone fixo deve ser preenchido")
     private String telefone_fixo;
 
-    @NotBlank
+    @NotBlank(message = "Celular deve ser preenchido")
     private String celular;
 
-    @NotBlank
+    @NotBlank(message = "Altura deve ser preenchido")
     private String altura;
 
-    @NotBlank
+    @NotBlank(message = "Peso deve ser preenchido")
     private String peso;
 
-    @NotBlank
+    @NotBlank(message = "Tipo sanguineo deve ser preenchido")
     private String tipo_sanguineo;
 
 }

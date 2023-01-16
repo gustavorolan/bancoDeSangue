@@ -10,6 +10,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 
 import com.BancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
 import com.BancoDeSangue.dtos.response.UsuarioResponse;
@@ -26,23 +29,25 @@ class UsuariosPorEstadoServiceImplTest {
 	private final UsuarioRepository usuarioRepository = Mockito.mock(UsuarioRepository.class);
 
 	@InjectMocks
-	private UsuariosPorEstadoServiceImpl usuariosPorEstadoService = new
-			UsuariosPorEstadoServiceImpl(usuarioRepository, usuarioMapper);
-
+	private UsuariosPorEstadoServiceImpl usuariosPorEstadoService = new UsuariosPorEstadoServiceImpl(usuarioRepository, usuarioMapper);
 
 	@Test
 	@DisplayName("Deve retornar usuário por estado")
 	void obter() {
-		Usuario usuario = UsuarioFactory.obterUsuario();
+		Page<Usuario> usuario =  new PageImpl<>(List.of(UsuarioFactory.obterUsuario()));
 		UsuarioResponse usuarioResponse = UsuarioFactory.obterUsuarioResponse();
+
 		ObterTodosUsuariosPorEstadoRequest request = ObterTodosUsuariosPorEstadoRequest.builder()
 				.estado(Estado.RS)
 				.build();
 
-		Mockito.when(usuarioRepository.findByEstado(request.getEstado())).thenReturn(List.of(usuario));
+		PageRequest pageRequest = PageRequest.of(0, 10);
 
-		List<UsuarioResponse> resultado = usuariosPorEstadoService.obter(request);
+		Mockito.when(usuarioRepository.findByEstado(request.getEstado(), pageRequest))
+				.thenReturn(usuario);
 
-		assertEquals(usuarioResponse, resultado.get(0));
+		Page<List<UsuarioResponse>> resultado = usuariosPorEstadoService.obter(request);
+
+		assertEquals(usuarioResponse, resultado.getContent().get(0).get(0));
 	}
 }
