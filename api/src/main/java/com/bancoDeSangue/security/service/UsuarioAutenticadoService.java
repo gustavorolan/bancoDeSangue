@@ -4,7 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.mapper.UsuarioMapper;
 import com.BancoDeSangue.model.Usuario;
 import com.BancoDeSangue.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;

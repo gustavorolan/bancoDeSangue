@@ -1,0 +1,4 @@
+select * from usuario as us 
+inner join informacoes_pessoais ip  on us.id=ip.user_account 
+inner join contato co  on us.id=co.user_account 
+inner join endereco ed  on us.id=ed.user_account
