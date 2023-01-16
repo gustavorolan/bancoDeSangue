@@ -6,9 +6,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.BancoDeSangue.model.Estado;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class CriarNovoUsuarioRequest {
     @NotEmpty
     private String nome;
@@ -42,6 +44,9 @@ public class CriarNovoUsuarioRequest {
 
     @NotBlank
     private String endereco;
+
+    @NotNull
+    private Integer numero;
 
     @NotBlank
     private String bairro;

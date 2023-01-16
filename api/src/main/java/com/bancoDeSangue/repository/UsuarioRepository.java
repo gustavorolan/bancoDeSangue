@@ -27,8 +27,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	@Query("select count(u) from Usuario u where (u.informacoesPessoais.sexo=?1)")
 	Long contadorPorSexo(Sexo sexo);
 
-	@Query("select count(u) from Usuario u where (u.informacoesPessoais.tipoSanguineo in (?1))")
-	Long contadorPorListaDeTipoSanguineo(List<TipoSanguineo> listaTipoSanguineo);
+	@Query("select count(u) from Usuario u where ((u.informacoesPessoais.tipoSanguineo in (?1) ) and (u.isPermitidoDoar=?2))")
+	Long contadorPorListaDeTipoSanguineo(List<TipoSanguineo> listaTipoSanguineo, boolean isPermitidoDoar);
 	@Query("select u.idade from Usuario u where (u.informacoesPessoais.tipoSanguineo=?1)")
 	List<Integer> listaDeIdadePorTipoSanguineo(TipoSanguineo tipoSanguineo);
 

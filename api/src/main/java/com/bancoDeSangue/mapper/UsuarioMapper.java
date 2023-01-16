@@ -24,7 +24,19 @@ public class UsuarioMapper {
 		Endereco endereco = addressToEntity(request);
 		Contato contato = contactToEntity(request);
 
-		Usuario usuario = new Usuario(null, request.getNome(), request.getEmail(), request.getSenha(), null, informacoesPessoais, endereco, contato, 0, 0, false, false);
+		Usuario usuario = Usuario.builder()
+				.nome(request.getNome())
+				.email(request.getEmail())
+				.senha(request.getSenha())
+				.permissaoList(List.of())
+				.informacoesPessoais(informacoesPessoais)
+				.endereco(endereco)
+				.contato(contato)
+				.idade(0)
+				.imc(0)
+				.isObeso(false)
+				.isPermitidoDoar(false)
+				.build();
 
 		informacoesPessoais.setUsuario(usuario);
 		endereco.setUsuario(usuario);
@@ -34,15 +46,34 @@ public class UsuarioMapper {
 	}
 
 	private Contato contactToEntity(CriarNovoUsuarioRequest request) {
-		return new Contato(null, null, request.getTelefone_fixo(), request.getCelular());
+		return Contato.builder()
+				.telefone_fixo(request.getTelefone_fixo())
+				.celular(request.getCelular())
+				.build();
 	}
 
 	private Endereco addressToEntity(CriarNovoUsuarioRequest request) {
-		return new Endereco(null, request.getEndereco(), request.getBairro(), request.getCidade(), request.getEstado(), null);
+		return Endereco.builder()
+				.endereco(request.getEndereco())
+				.bairro(request.getBairro())
+				.cidade(request.getCidade())
+				.estado(request.getEstado())
+				.numero(request.getNumero())
+				.build();
 	}
 
 	private InformacoesPessoais personalInfoToEntity(CriarNovoUsuarioRequest request) {
-		return new InformacoesPessoais(null, null, request.getMae(), request.getPai(), request.getCpf(), request.getRg(), request.getData_nasc(), Sexo.obter(request.getSexo()), Double.parseDouble(request.getAltura()), Double.parseDouble(request.getPeso()), TipoSanguineo.obter(request.getTipo_sanguineo()));
+		return InformacoesPessoais.builder()
+				.mae(request.getMae())
+				.pai(request.getPai())
+				.Cpf(request.getCpf())
+				.rg(request.getRg())
+				.data_nasc(request.getData_nasc())
+				.sexo(Sexo.obter(request.getSexo()))
+				.altura(Double.parseDouble(request.getAltura()))
+				.peso(Double.parseDouble(request.getPeso()))
+				.tipoSanguineo(TipoSanguineo.obter(request.getTipo_sanguineo()))
+				.build();
 	}
 
 	public List<UsuarioResponse> toResponse(List<Usuario> usuarios) {
@@ -55,21 +86,39 @@ public class UsuarioMapper {
 		ContatoResponse contatoResponse = contatoToResponse(entity);
 		InformacoesPessoaisResponse informacoesPessoaisResponse = informacoesPessoaisToResponse(entity);
 		EnderecoResponse enderecoResponse = enderecoToResponse(entity);
-		return new UsuarioResponse(entity.getNome(), entity.getEmail(), contatoResponse, enderecoResponse, informacoesPessoaisResponse, entity.isObeso(), entity.isPermitidoDoar());
+		return UsuarioResponse.builder()
+				.nome(entity.getNome())
+				.email(entity.getEmail())
+				.contato(contatoResponse)
+				.enderecoResponse(enderecoResponse)
+				.informacoesPessoaisResponse(informacoesPessoaisResponse)
+				.isObeso(entity.isObeso())
+				.isPermitidoDoar(entity.isPermitidoDoar())
+				.build();
 	}
 
 	private ContatoResponse contatoToResponse(Usuario entity) {
 		Contato contato = entity.getContato();
-		return new ContatoResponse(contato.getCelular(), contato.getTelefone_fixo());
+		return ContatoResponse.builder()
+				.celular(contato.getCelular())
+				.telefone(contato.getTelefone_fixo())
+				.build();
 	}
 
 	private EnderecoResponse enderecoToResponse(Usuario entity) {
 		Endereco endereco = entity.getEndereco();
-		return new EnderecoResponse(endereco.getCidade(), endereco.getEstado());
+		return EnderecoResponse.builder()
+				.cidade(endereco.getCidade())
+				.estado(endereco.getEstado())
+				.build();
 	}
 
 	private InformacoesPessoaisResponse informacoesPessoaisToResponse(Usuario entity) {
 		InformacoesPessoais informacoesPessoais = entity.getInformacoesPessoais();
-		return new InformacoesPessoaisResponse(informacoesPessoais.getSexo(), informacoesPessoais.getTipoSanguineo());
+
+		return InformacoesPessoaisResponse.builder()
+				.sexo(informacoesPessoais.getSexo())
+				.tipoSanguineo(informacoesPessoais.getTipoSanguineo())
+				.build();
 	}
 }

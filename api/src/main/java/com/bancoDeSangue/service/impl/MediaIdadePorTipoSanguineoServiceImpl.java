@@ -23,16 +23,20 @@ public class MediaIdadePorTipoSanguineoServiceImpl implements MediaIdadePorTipoS
 		Collection<TipoSanguineo> tipoSanguineos = TipoSanguineo.obterLitaDeTiposSanguineos()
 				.values();
 
-		return tipoSanguineos
-				.stream()
+		return tipoSanguineos.stream()
 				.map(this::obterMediaIdadePorTipoSanguineoResponse)
 				.collect(Collectors.toList());
 	}
 
 	private MediaIdadePorTipoSanguineoResponse obterMediaIdadePorTipoSanguineoResponse(TipoSanguineo tipoSanguineo) {
 		List<Integer> listaDeIdades = usuarioRepository.listaDeIdadePorTipoSanguineo(tipoSanguineo);
-		Integer somaDasIdades = listaDeIdades.stream().reduce(0, Integer::sum);
+		Integer somaDasIdades = listaDeIdades.stream()
+				.reduce(0, Integer::sum);
 		double media = Double.valueOf(somaDasIdades) / (double) listaDeIdades.size();
-		return new MediaIdadePorTipoSanguineoResponse((float) media, tipoSanguineo.getSigla());
+
+		return MediaIdadePorTipoSanguineoResponse.builder()
+				.media((float) media)
+				.tipoSanguineo(tipoSanguineo.getSigla())
+				.build();
 	}
 }

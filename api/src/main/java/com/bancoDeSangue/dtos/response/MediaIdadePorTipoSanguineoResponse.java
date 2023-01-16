@@ -1,12 +1,10 @@
 package com.BancoDeSangue.dtos.response;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder
 public class MediaIdadePorTipoSanguineoResponse {
 	private Float media;
 	private String tipoSanguineo;

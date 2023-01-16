@@ -42,9 +42,9 @@ public class NovoUsuarioServiceImpl implements NovoUsuarioService {
 
 		Usuario usuarioComIsPermitidoDoar = doarService.preencher(usuarioComImc);
 
-		usuarioRepository.save(usuarioComIsPermitidoDoar);
+		Usuario save = usuarioRepository.save(usuarioComIsPermitidoDoar);
 
-		return usuario.getId();
+		return save.getId();
 	}
 
 

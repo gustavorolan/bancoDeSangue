@@ -33,7 +33,10 @@ public class QuantidadeDeDoadoresPossiveisServiceImpl implements QuantidadeDeDoa
 
 	private QuantidadeDeDoadoresPossiveisResponse obterQuantidadeDeDoadoresPossiveisResponse(TipoSanguineo tipoSanguineo) {
 		List<TipoSanguineo> listaTipoSanguineos = tipoSanguineoExecutorService.obterListaPossivelReceber(tipoSanguineo);
-		Long numeroDeDoadores = usuarioRepository.contadorPorListaDeTipoSanguineo(listaTipoSanguineos);
-		return new QuantidadeDeDoadoresPossiveisResponse(numeroDeDoadores, tipoSanguineo.getSigla());
+		Long numeroDeDoadores = usuarioRepository.contadorPorListaDeTipoSanguineo(listaTipoSanguineos, true);
+		return QuantidadeDeDoadoresPossiveisResponse.builder()
+				.numeroDoadores(numeroDeDoadores)
+				.tipoSanguineo(tipoSanguineo.getSigla())
+				.build();
 	}
 }

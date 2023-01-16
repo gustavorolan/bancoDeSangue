@@ -2,6 +2,6 @@ package com.BancoDeSangue.service;
 
 import com.BancoDeSangue.dtos.response.UsuarioResponse;
 
-public interface UsuarioLogadoService {
+public interface UsuarioAutenticadoResponseService {
 	UsuarioResponse obter();
 }

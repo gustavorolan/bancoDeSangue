@@ -8,18 +8,22 @@ import org.springframework.stereotype.Service;
 
 import com.BancoDeSangue.model.Usuario;
 import com.BancoDeSangue.service.IdadeService;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class IdadeServiceImpl implements IdadeService {
+
+	private final LocalDateServiceImpl localDateServiceImpl;
+
 	@Override
 	public Usuario preencher(Usuario usuario) {
 		LocalDate nascimento = converterParaLocalDate(usuario.getInformacoesPessoais().getData_nasc());
-		LocalDate hoje = LocalDate.now();
+		LocalDate hoje = localDateServiceImpl.now();
 		LocalDate aniversario = LocalDate.of(hoje.getYear(),nascimento.getMonth(), nascimento.getDayOfMonth());
 		int idade = hoje.compareTo(nascimento);
 
 		if(aniversario.isAfter(hoje)) idade--;
-
 		usuario.setIdade(idade);
 		return usuario;
 	}

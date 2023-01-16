@@ -18,10 +18,8 @@ public class PercentualObesidadeServiceImpl implements PercentualObesidadeServic
 
 	@Override
 	public List<PercentualObesidadeResponse> consultar() {
-		List<PercentualObesidadeResponse> listaPercentualObesidadeResponse  = new ArrayList<>();
-		Sexo.obterLista()
-				.forEach((s, sexo) -> listaPercentualObesidadeResponse
-						.add(obterPercentualObesidadeResponse(sexo)));
+		List<PercentualObesidadeResponse> listaPercentualObesidadeResponse = new ArrayList<>();
+		Sexo.obterLista().forEach((s, sexo) -> listaPercentualObesidadeResponse.add(obterPercentualObesidadeResponse(sexo)));
 		return listaPercentualObesidadeResponse;
 	}
 
@@ -29,6 +27,10 @@ public class PercentualObesidadeServiceImpl implements PercentualObesidadeServic
 		Double numeroDeObesos = (double) usuarioRepository.contadorPorSexoAndObesidade(sexo, true);
 		Double numeroDePessoas = (double) usuarioRepository.contadorPorSexo(sexo);
 		double percentual = (numeroDeObesos / numeroDePessoas) * 100;
-		return new PercentualObesidadeResponse(sexo.getDescricao(), (float) percentual);
+
+		return PercentualObesidadeResponse.builder()
+				.percentual((float) percentual)
+				.sexo(sexo.getDescricao())
+				.build();
 	}
 }

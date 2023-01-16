@@ -1,5 +1,6 @@
-package com.BancoDeSangue.utils.factory;
+package com.BancoDeSangue.util.factory;
 
+import com.BancoDeSangue.dtos.response.InformacoesPessoaisResponse;
 import com.BancoDeSangue.model.InformacoesPessoais;
 import com.BancoDeSangue.model.Sexo;
 import com.BancoDeSangue.model.TipoSanguineo;
@@ -24,4 +25,13 @@ public class InformacoesPessoaisFactory {
 	public static InformacoesPessoais obterInformacoesPessoais(Usuario usuario){
 		return obterInformacoesPessoaisBuilder(usuario).build();
 	}
+
+	public static InformacoesPessoaisResponse obterInformacoesPessoaisResponse(Usuario usuario){
+		InformacoesPessoais informacoesPessoais = obterInformacoesPessoais(usuario);
+		return InformacoesPessoaisResponse.builder()
+				.sexo(informacoesPessoais.getSexo())
+				.tipoSanguineo(informacoesPessoais.getTipoSanguineo())
+				.build();
+	}
+
 }

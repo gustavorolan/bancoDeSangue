@@ -1,5 +1,6 @@
-package com.BancoDeSangue.utils.factory;
+package com.BancoDeSangue.util.factory;
 
+import com.BancoDeSangue.dtos.response.EnderecoResponse;
 import com.BancoDeSangue.model.Endereco;
 import com.BancoDeSangue.model.Estado;
 import com.BancoDeSangue.model.Usuario;
@@ -18,4 +19,13 @@ public class EnderecoFactory {
 	public static Endereco obterEndereco(Usuario usuario){
 		return obterEnderecoBuilder(usuario).build();
 	}
+
+	public static EnderecoResponse obterEnderecoResponse(Usuario usuario){
+		Endereco endereco = obterEndereco(usuario);
+		return EnderecoResponse.builder()
+				.estado(endereco.getEstado())
+				.cidade(endereco.getCidade())
+				.build();
+	}
+
 }

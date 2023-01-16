@@ -22,9 +22,11 @@ public class EstadoServiceImpl implements EstadoService {
 	public List<EstadoResponse> obter() {
 		List<Estado> estados = Estado.obterLitaDeEstados();
 		return estados.stream()
-				.map(estado -> new EstadoResponse(estado,estado.getNome()))
+				.map(estado -> EstadoResponse.builder()
+						.sigla(estado)
+						.nome(estado.getNome())
+						.build())
 				.collect(Collectors.toList());
-
 	}
 
 	@Override
@@ -37,6 +39,10 @@ public class EstadoServiceImpl implements EstadoService {
 
 	private NumeroDeDoadoresPorEstadoResponse obterNumeroDeDoadoresPorEstadoResponse(Estado estado) {
 		Long numeroDeDoadores = usuarioRepository.contadorPorEstado(estado);
-		return new NumeroDeDoadoresPorEstadoResponse(estado, numeroDeDoadores);
+
+		return NumeroDeDoadoresPorEstadoResponse.builder()
+				.estado(estado)
+				.numeroDeDoadores(numeroDeDoadores)
+				.build();
 	}
 }

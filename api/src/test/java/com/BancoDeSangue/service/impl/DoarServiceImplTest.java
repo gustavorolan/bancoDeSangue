@@ -9,7 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.utils.factory.UsuarioFactory;
+import com.BancoDeSangue.util.factory.UsuarioFactory;
 
 @ExtendWith(MockitoExtension.class)
 class DoarServiceImplTest {

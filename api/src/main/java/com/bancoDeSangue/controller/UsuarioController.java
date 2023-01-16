@@ -53,6 +53,7 @@ public class UsuarioController {
 		UsuarioResponse listaUsuarioResponse = usuarioAutenticadoResponseService.obter();
 		return ResponseEntity.ok(listaUsuarioResponse);
 	}
+
 	@GetMapping("/estado")
 	public ResponseEntity<List<UsuarioResponse>> obterTodosUsuariosPorEstado(@RequestBody ObterTodosUsuariosPorEstadoRequest request){
 		List<UsuarioResponse> listaUsuarioResponse = usuariosPorEstadoService.obter(request);
