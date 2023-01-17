@@ -9,10 +9,12 @@ Como executar o projeto
     na coleção disponivel na raiz
 
 3- Iniciar backEnd
+
    a) abrir a pasta api na ide 
    b) executar
 
 4- Iniciar o front
+
    a) abrir a pasta app no vs studio
    b) npm install
    c) npm run start
