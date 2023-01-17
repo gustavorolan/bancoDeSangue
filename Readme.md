@@ -2,9 +2,9 @@ Como executar o projeto
 
 1- Criar banco de no Pgadmin com o nome bancoDeSangue e alterar o usuario e senha no pom da aplicação
 
-2- Criar a massan, tem duas opções:
-    a) Ir até a pasta src/main/resources/sql e executar query no pg admin
+2- Criar a massan, tem duas opções
 
+    a) Ir até a pasta src/main/resources/sql e executar query no pg admin
     b)Subir aplicação como create-drop e enviar uma requisção utilizando o endpoint criarVariosUsuarios
     na coleção disponivel na raiz
 
