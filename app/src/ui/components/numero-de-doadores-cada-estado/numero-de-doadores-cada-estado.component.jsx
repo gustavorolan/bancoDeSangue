@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useBancoDeSangueApi } from "../../../hooks/api";
-
 export const NumeroDeDoadoresCadaEstado = () => {
   const { getNumeroDeDoadoresCadaEstado } = useBancoDeSangueApi();
   const [numeroDeDoadoresCadaEstado, setNumeroDeDoadoresCadaEstado] = useState(
@@ -15,10 +14,10 @@ export const NumeroDeDoadoresCadaEstado = () => {
     getPercentualObesidadeApi();
   }, [getNumeroDeDoadoresCadaEstado]);
   return (
-    <div className="percentual-obesidade-por-idade">
+    <div className="numero-doadores-cada-estado">
       {numeroDeDoadoresCadaEstado.map(({ estado, numeroDeDoadores }) => (
         <div key={estado}>
-          <p>{estado}</p>
+          <h5>{estado}</h5>
           <p>{numeroDeDoadores}</p>
         </div>
       ))}

@@ -9,5 +9,5 @@ import lombok.Data;
 @Builder
 public class InformacoesPessoaisResponse {
 	private Sexo sexo;
-	private TipoSanguineo tipoSanguineo;
+	private String tipoSanguineo;
 }

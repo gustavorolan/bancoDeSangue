@@ -30,7 +30,7 @@ public class InformacoesPessoaisFactory {
 		InformacoesPessoais informacoesPessoais = obterInformacoesPessoais(usuario);
 		return InformacoesPessoaisResponse.builder()
 				.sexo(informacoesPessoais.getSexo())
-				.tipoSanguineo(informacoesPessoais.getTipoSanguineo())
+				.tipoSanguineo(informacoesPessoais.getTipoSanguineo().getSigla())
 				.build();
 	}
 

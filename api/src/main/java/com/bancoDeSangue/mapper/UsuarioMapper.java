@@ -119,7 +119,7 @@ public class UsuarioMapper {
 
 		return InformacoesPessoaisResponse.builder()
 				.sexo(informacoesPessoais.getSexo())
-				.tipoSanguineo(informacoesPessoais.getTipoSanguineo())
+				.tipoSanguineo(informacoesPessoais.getTipoSanguineo().getSigla())
 				.build();
 	}
 }

@@ -1,10 +1,10 @@
-import './App.css';
-import { TodasRotas } from './ui/components/index.js';
+import "./App.css";
+import { TodasRotas } from "./ui/components/rotas/todas-rotas.component";
 
 function App() {
   return (
     <div className="App">
-      <TodasRotas/>
+      <TodasRotas />
     </div>
   );
 }

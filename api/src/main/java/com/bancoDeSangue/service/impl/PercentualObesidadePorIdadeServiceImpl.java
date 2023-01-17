@@ -35,7 +35,7 @@ public class PercentualObesidadePorIdadeServiceImpl implements PercentualObesida
 		double media = calcularMedia(usuarios, somaImcs);
 
 		return PercentualObesidadePorIdadeResponse.builder()
-				.faixaEtaria(String.valueOf(faixaEtaria))
+				.faixaEtaria("De "+faixaEtaria.get(0)+" até " + faixaEtaria.get(1))
 				.media(media)
 				.build();
 	}

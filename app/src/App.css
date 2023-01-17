@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 570px;
+  width: 100%;
+}
+
+body,
+#root {
+  --cor-principal: rgb(255, 26, 26);
+}
+
+.percentual-obesidade-por-idade,
+.media-idade-por-tipo-sanguineo,
+.numero-doadores-cada-estado,
+.percentual-obesidade-por-sexo,
+.quantidade-doadores-possiveis {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.percentual-obesidade-por-idade div,
+.media-idade-por-tipo-sanguineo div,
+.numero-doadores-cada-estado div,
+.percentual-obesidade-por-sexo div,
+.quantidade-doadores-possiveis div{
+  display: flex;
+  height: 80px;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--cor-principal);
+  gap: 10px;
+}
+
+.percentual-obesidade-por-sexo div {
+  width: 100px;
+}
+
+p,
+h5 {
+  color: white;
+}

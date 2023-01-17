@@ -15,9 +15,11 @@ export const PercentualObesidadeSexo = () => {
   return (
     <div className="percentual-obesidade-por-sexo">
       {percentualObesidades.map(({ sexo, percentual }) => (
-        <div key={sexo}>
-          <p>{sexo}</p>
-          <p>{percentual}</p>
+        <div className="percentual-obesidade-por-sexo-container">
+          <div key={sexo}>
+            <p>{sexo}</p>
+            <p>{parseFloat(percentual).toFixed(1)}</p>
+          </div>
         </div>
       ))}
     </div>

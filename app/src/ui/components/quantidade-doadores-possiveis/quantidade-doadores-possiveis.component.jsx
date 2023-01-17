@@ -14,7 +14,7 @@ export const QuantidadeDoadoresPossiveis = () => {
     getPercentualObesidadeApi();
   }, [getQuantidadeDeDoadoresPossiveis]);
   return (
-    <div className="percentual-obesidade-por-idade">
+    <div className="quantidade-doadores-possiveis">
       {quantidadeDoadoresPossiveis.map(({ numeroDoadores, tipoSanguineo }) => (
         <div key={tipoSanguineo}>
           <p>{tipoSanguineo}</p>

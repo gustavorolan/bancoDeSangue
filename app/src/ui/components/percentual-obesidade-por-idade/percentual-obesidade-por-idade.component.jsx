@@ -6,7 +6,8 @@ export const PercentualObesidadePorIdade = () => {
   const [percentualObesidades, setPercentualObesidade] = useState([]);
   useEffect(() => {
     const getPercentualObesidadeApi = async () => {
-      const percentualObesidadePorIdadeResponse = await percentualObesidadePorIdade();
+      const percentualObesidadePorIdadeResponse =
+        await percentualObesidadePorIdade();
       setPercentualObesidade(percentualObesidadePorIdadeResponse.data);
     };
     getPercentualObesidadeApi();
@@ -16,7 +17,7 @@ export const PercentualObesidadePorIdade = () => {
       {percentualObesidades.map(({ faixaEtaria, media }) => (
         <div key={faixaEtaria}>
           <p>{faixaEtaria}</p>
-          <p>{media}</p>
+          <p>{parseFloat(media).toFixed(1)}%</p>
         </div>
       ))}
     </div>

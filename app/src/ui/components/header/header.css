@@ -1,0 +1,20 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  border-radius: 20px;
+  height: 40px;
+  margin: 30px;
+  background-color: var(--cor-principal);
+}
+.header-container:hover {
+  
+    cursor: pointer;
+    opacity: 80%;
+  }
+
+.header-link {
+  text-decoration: none;
+  color: white;
+}

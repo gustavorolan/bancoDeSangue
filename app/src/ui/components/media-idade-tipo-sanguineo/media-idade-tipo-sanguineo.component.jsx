@@ -6,16 +6,22 @@ export const MediaIdadeTipoSanguineo = () => {
   const [mediaIdadePorTipoSanguineo, setmediaIdadePorTipoSanguineo] = useState(
     []
   );
+ 
   useEffect(() => {
     const getMediaIdadePorTipoSanguineoApi = async () => {
-      const mediaIdadePorTipoSanguineoResponse =
-        await getMediaIdadePorTipoSanguineo();
+      const mediaIdadePorTipoSanguineoResponse = await getMediaIdadePorTipoSanguineo();
       setmediaIdadePorTipoSanguineo(mediaIdadePorTipoSanguineoResponse.data);
     };
     getMediaIdadePorTipoSanguineoApi();
   }, [getMediaIdadePorTipoSanguineo]);
+
+  useEffect(() => {
+    setmediaIdadePorTipoSanguineo(mediaIdadePorTipoSanguineo);
+  }, [mediaIdadePorTipoSanguineo,setmediaIdadePorTipoSanguineo,getMediaIdadePorTipoSanguineo]);
+
+
   return (
-    <div>
+    <div className="media-idade-por-tipo-sanguineo">
       {mediaIdadePorTipoSanguineo.map(({ tipoSanguineo, media }) => (
         <div key={tipoSanguineo}>
           <p>{tipoSanguineo}</p>

@@ -66,6 +66,12 @@ export function useBancoDeSangueApi() {
     );
   };
 
+  const getUsuarioAutenticado = async () => {
+    return await httpInstanceToken.get(
+      USUARIO_URL + "/usuarioAutenticado"
+    );
+  };
+
   return useMemo(
     () => ({
       getLogin,
@@ -76,7 +82,8 @@ export function useBancoDeSangueApi() {
       getMediaIdadePorTipoSanguineo,
       percentualObesidadePorIdade,
       getQuantidadeDeDoadoresPossiveis,
-      getNumeroDeDoadoresCadaEstado
+      getNumeroDeDoadoresCadaEstado,
+      getUsuarioAutenticado
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
