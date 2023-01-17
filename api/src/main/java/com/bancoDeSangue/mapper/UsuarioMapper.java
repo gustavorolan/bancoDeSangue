@@ -3,6 +3,7 @@ package com.BancoDeSangue.mapper;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
@@ -76,7 +77,7 @@ public class UsuarioMapper {
 				.build();
 	}
 
-	public List<UsuarioResponse> toResponse(List<Usuario> usuarios) {
+	public List<UsuarioResponse> toResponse(Page<Usuario> usuarios) {
 		return usuarios.stream()
 				.map(this::toResponse)
 				.collect(Collectors.toList());

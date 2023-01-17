@@ -2,6 +2,8 @@ package com.BancoDeSangue.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,7 +18,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	Usuario findByEmail(String email);
 
 	@Query("select u from Usuario u where (u.endereco.estado=?1)  order by u.nome desc")
-	List<Usuario> findByEstado(Estado estado);
+	Page<Usuario> findByEstado(Estado estado, Pageable pageable);
 
 	@Query("select count(u) from Usuario u where (u.endereco.estado=?1)")
 	Long contadorPorEstado(Estado estado);

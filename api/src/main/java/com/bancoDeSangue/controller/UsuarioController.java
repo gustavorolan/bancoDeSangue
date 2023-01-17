@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,8 +56,8 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/estado")
-	public ResponseEntity<List<UsuarioResponse>> obterTodosUsuariosPorEstado(@RequestBody ObterTodosUsuariosPorEstadoRequest request){
-		List<UsuarioResponse> listaUsuarioResponse = usuariosPorEstadoService.obter(request);
+	public ResponseEntity<Page<List<UsuarioResponse>>> obterTodosUsuariosPorEstado(@RequestBody ObterTodosUsuariosPorEstadoRequest request){
+		Page<List<UsuarioResponse>> listaUsuarioResponse = usuariosPorEstadoService.obter(request);
 		return ResponseEntity.ok(listaUsuarioResponse);
 	}
 }
