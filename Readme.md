@@ -1,22 +1,25 @@
-Como executar o projeto
 
-1- Criar banco de no Pgadmin com o nome bancoDeSangue e alterar o usuario e senha no pom da aplicação
+# Banco De Sangue
 
-2- Criar a massan, tem duas opções
+###Como executar o projeto
 
-    a) Ir até a pasta src/main/resources/sql e executar query no pg admin
-    b)Subir aplicação como create-drop e enviar uma requisção utilizando o endpoint criarVariosUsuarios
-    na coleção disponivel na raiz
+#### 1- Criar banco de no Pgadmin com o nome bancoDeSangue e alterar o usuario e senha no pom da aplicação
 
-3- Iniciar backEnd
+#### 2- Criar a massan, tem duas opções:
 
-   a) abrir a pasta api na ide 
-   b) executar
+   ##### a) ir até a pasta src/main/resources/sql e executar query no pg admin
 
-4- Iniciar o front
+   ##### b)Subir aplicação como create-drop e enviar uma requisção utilizando o endpoint criarVariosUsuarios na coleção disponivel na raiz
 
-   a) abrir a pasta app no vs studio
-   b) npm install
-   c) npm run start
+#### 3- Iniciar backEnd:
 
-5- Abrir localhost:3000 no navegador
+  #####  a) abrir a pasta api na ide 
+  #####  b) executar
+
+#### 4- Iniciar o front:
+
+  #####  a) abrir a pasta app no vs studio
+  #####  b) npm install
+  #####  c) npm run start
+
+#### 5- Abrir localhost:3000 no navegador
