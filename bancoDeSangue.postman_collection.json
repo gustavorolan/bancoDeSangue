@@ -181,13 +181,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:10008/inicio/usuarioAutenticado",
+					"raw": "localhost:10008/usuario/usuarioAutenticado",
 					"host": [
 						"localhost"
 					],
 					"port": "10008",
 					"path": [
-						"inicio",
+						"usuario",
 						"usuarioAutenticado"
 					]
 				}
