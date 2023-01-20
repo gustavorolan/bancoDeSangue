@@ -1,4 +1,4 @@
-package com.BancoDeSangue.security.config;
+package com.bancoDeSangue.security.config;
 
 import static org.springframework.session.web.http.HeaderHttpSessionIdResolver.*;
 

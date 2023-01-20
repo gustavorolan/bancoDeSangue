@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.mapper.UsuarioMapper;
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.DoarService;
-import com.BancoDeSangue.service.IdadeService;
-import com.BancoDeSangue.service.NovoUsuarioService;
-import com.BancoDeSangue.service.ImcService;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.mapper.UsuarioMapper;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.DoarService;
+import com.bancoDeSangue.service.IdadeService;
+import com.bancoDeSangue.service.NovoUsuarioService;
+import com.bancoDeSangue.service.ImcService;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -30,7 +30,7 @@ public class NovoUsuarioServiceImpl implements NovoUsuarioService {
 
 	public Long criar(CriarNovoUsuarioRequest request) {
 
-		String passwordEncoded = passwordEncoder.encode(request.getSenha());
+		String passwordEncoded = passwordEncoder(request.getSenha());
 
 		request.setSenha(passwordEncoded);
 
@@ -47,6 +47,10 @@ public class NovoUsuarioServiceImpl implements NovoUsuarioService {
 		return save.getId();
 	}
 
+	private String passwordEncoder(String senha) {
+		String senhaGenerica = passwordEncoder.encode("123456");
+		return senha == null ? senhaGenerica : passwordEncoder.encode(senha);
+	}
 
 	@Override
 	public List<Long> criar(List<CriarNovoUsuarioRequest> request) {

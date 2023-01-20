@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,8 +14,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.BancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
-import com.BancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
+import com.bancoDeSangue.repository.UsuarioRepository;
 
 @ExtendWith(MockitoExtension.class)
 class MediaIdadePorTipoSanguineoServiceImplTest {

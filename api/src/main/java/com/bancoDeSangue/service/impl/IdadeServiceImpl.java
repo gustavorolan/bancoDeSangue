@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.service.IdadeService;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.service.IdadeService;
 import lombok.RequiredArgsConstructor;
 
 @Service

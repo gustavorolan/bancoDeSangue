@@ -1,4 +1,4 @@
-package com.BancoDeSangue.model;
+package com.bancoDeSangue.model;
 
 import java.util.Arrays;
 import java.util.List;

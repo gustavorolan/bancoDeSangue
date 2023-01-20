@@ -1,4 +1,4 @@
-package com.BancoDeSangue.controller;
+package com.bancoDeSangue.controller;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
-import com.BancoDeSangue.dtos.response.UsuarioResponse;
-import com.BancoDeSangue.service.UsuarioAutenticadoResponseService;
-import com.BancoDeSangue.service.UsuariosPorEstadoService;
-import com.BancoDeSangue.service.impl.NovoUsuarioServiceImpl;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
+import com.bancoDeSangue.dtos.response.UsuarioResponse;
+import com.bancoDeSangue.service.UsuarioAutenticadoResponseService;
+import com.bancoDeSangue.service.UsuariosPorEstadoService;
+import com.bancoDeSangue.service.impl.NovoUsuarioServiceImpl;
 import lombok.RequiredArgsConstructor;
 
 @RestController

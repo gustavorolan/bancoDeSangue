@@ -1,8 +1,8 @@
-package com.BancoDeSangue.service;
+package com.bancoDeSangue.service;
 
 import java.util.List;
 
-import com.BancoDeSangue.dtos.response.PercentualObesidadePorIdadeResponse;
+import com.bancoDeSangue.dtos.response.PercentualObesidadePorIdadeResponse;
 
 
 

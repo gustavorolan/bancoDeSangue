@@ -1,11 +1,11 @@
-package com.BancoDeSangue.dtos.request;
+package com.bancoDeSangue.dtos.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.BancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Estado;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,7 +18,7 @@ public class CriarNovoUsuarioRequest {
     @Email(message = "Email deve ser preenchido")
     private String email;
 
-    private String  senha = "123456";
+    private String  senha;
 
     @NotBlank(message = "Cpf deve ser preenchido")
     private String Cpf;

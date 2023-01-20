@@ -1,17 +1,17 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
 import java.util.List;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.dtos.response.ContatoResponse;
-import com.BancoDeSangue.dtos.response.EnderecoResponse;
-import com.BancoDeSangue.dtos.response.InformacoesPessoaisResponse;
-import com.BancoDeSangue.dtos.response.UsuarioResponse;
-import com.BancoDeSangue.model.Contato;
-import com.BancoDeSangue.model.Endereco;
-import com.BancoDeSangue.model.Estado;
-import com.BancoDeSangue.model.InformacoesPessoais;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.dtos.response.ContatoResponse;
+import com.bancoDeSangue.dtos.response.EnderecoResponse;
+import com.bancoDeSangue.dtos.response.InformacoesPessoaisResponse;
+import com.bancoDeSangue.dtos.response.UsuarioResponse;
+import com.bancoDeSangue.model.Contato;
+import com.bancoDeSangue.model.Endereco;
+import com.bancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.InformacoesPessoais;
+import com.bancoDeSangue.model.Usuario;
 
 public class UsuarioFactory {
 	public static Usuario.UsuarioBuilder obterUsuarioBuilder(InformacoesPessoais informacoesPessoais, Endereco endereco, Contato contato) {

@@ -1,10 +1,10 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
-import com.BancoDeSangue.dtos.response.InformacoesPessoaisResponse;
-import com.BancoDeSangue.model.InformacoesPessoais;
-import com.BancoDeSangue.model.Sexo;
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.dtos.response.InformacoesPessoaisResponse;
+import com.bancoDeSangue.model.InformacoesPessoais;
+import com.bancoDeSangue.model.Sexo;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.model.Usuario;
 
 public class InformacoesPessoaisFactory {
 	public static InformacoesPessoais.InformacoesPessoaisBuilder obterInformacoesPessoaisBuilder(Usuario usuario){

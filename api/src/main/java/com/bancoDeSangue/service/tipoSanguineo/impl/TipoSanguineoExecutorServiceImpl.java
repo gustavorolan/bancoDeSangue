@@ -1,13 +1,13 @@
-package com.BancoDeSangue.service.tipoSanguineo.impl;
+package com.bancoDeSangue.service.tipoSanguineo.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoExecutorService;
-import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.service.tipoSanguineo.TipoSanguineoExecutorService;
+import com.bancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

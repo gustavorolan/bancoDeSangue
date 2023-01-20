@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -16,14 +16,14 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.mapper.UsuarioMapper;
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.DoarService;
-import com.BancoDeSangue.service.IdadeService;
-import com.BancoDeSangue.service.ImcService;
-import com.BancoDeSangue.util.factory.UsuarioFactory;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.mapper.UsuarioMapper;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.DoarService;
+import com.bancoDeSangue.service.IdadeService;
+import com.bancoDeSangue.service.ImcService;
+import com.bancoDeSangue.util.factory.UsuarioFactory;
 
 @ExtendWith(MockitoExtension.class)
 class NovoUsuarioServiceImplTest {

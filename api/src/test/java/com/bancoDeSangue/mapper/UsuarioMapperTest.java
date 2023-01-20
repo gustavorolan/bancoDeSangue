@@ -1,4 +1,4 @@
-package com.BancoDeSangue.mapper;
+package com.bancoDeSangue.mapper;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,9 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.util.factory.UsuarioFactory;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.util.factory.UsuarioFactory;
 
 @ExtendWith(MockitoExtension.class)
 class UsuarioMapperTest {

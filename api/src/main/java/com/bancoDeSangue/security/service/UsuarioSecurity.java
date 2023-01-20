@@ -1,4 +1,4 @@
-package com.BancoDeSangue.security.service;
+package com.bancoDeSangue.security.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.model.Usuario;
 
 public class UsuarioSecurity implements UserDetails {
     private  Long id;

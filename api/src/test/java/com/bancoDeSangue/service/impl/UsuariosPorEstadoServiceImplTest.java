@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,13 +14,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
-import com.BancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
-import com.BancoDeSangue.dtos.response.UsuarioResponse;
-import com.BancoDeSangue.mapper.UsuarioMapper;
-import com.BancoDeSangue.model.Estado;
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.util.factory.UsuarioFactory;
+import com.bancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
+import com.bancoDeSangue.dtos.response.UsuarioResponse;
+import com.bancoDeSangue.mapper.UsuarioMapper;
+import com.bancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.util.factory.UsuarioFactory;
 
 @ExtendWith(MockitoExtension.class)
 class UsuariosPorEstadoServiceImplTest {

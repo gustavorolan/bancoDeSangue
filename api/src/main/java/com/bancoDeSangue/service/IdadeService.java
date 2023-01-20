@@ -1,6 +1,6 @@
-package com.BancoDeSangue.service;
+package com.bancoDeSangue.service;
 
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.model.Usuario;
 
 public interface IdadeService {
 	Usuario preencher(Usuario dataNascimento);

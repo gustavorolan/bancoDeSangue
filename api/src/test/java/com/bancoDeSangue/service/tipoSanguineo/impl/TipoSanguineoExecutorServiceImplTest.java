@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.tipoSanguineo.impl;
+package com.bancoDeSangue.service.tipoSanguineo.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,9 +10,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
-import com.BancoDeSangue.util.factory.TipoSanguineoFactory;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.service.tipoSanguineo.TipoSanguineoService;
+import com.bancoDeSangue.util.factory.TipoSanguineoFactory;
 
 @ExtendWith(MockitoExtension.class)
 class TipoSanguineoExecutorServiceImplTest {

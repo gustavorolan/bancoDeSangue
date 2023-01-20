@@ -1,4 +1,4 @@
-package com.BancoDeSangue.dtos.response;
+package com.bancoDeSangue.dtos.response;
 
 
 import lombok.Builder;

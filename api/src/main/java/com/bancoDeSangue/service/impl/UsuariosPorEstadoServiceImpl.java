@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 
 import java.util.List;
@@ -7,12 +7,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
-import com.BancoDeSangue.dtos.response.UsuarioResponse;
-import com.BancoDeSangue.mapper.UsuarioMapper;
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.UsuariosPorEstadoService;
+import com.bancoDeSangue.dtos.request.ObterTodosUsuariosPorEstadoRequest;
+import com.bancoDeSangue.dtos.response.UsuarioResponse;
+import com.bancoDeSangue.mapper.UsuarioMapper;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.UsuariosPorEstadoService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

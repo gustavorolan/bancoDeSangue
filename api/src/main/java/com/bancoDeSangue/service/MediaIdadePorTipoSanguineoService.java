@@ -1,8 +1,8 @@
-package com.BancoDeSangue.service;
+package com.bancoDeSangue.service;
 
 import java.util.List;
 
-import com.BancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
+import com.bancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
 
 public interface MediaIdadePorTipoSanguineoService {
 	 List<MediaIdadePorTipoSanguineoResponse> consultar();

@@ -1,4 +1,4 @@
-package com.BancoDeSangue.controller;
+package com.bancoDeSangue.controller;
 
 import java.util.List;
 
@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.BancoDeSangue.dtos.response.EstadoResponse;
-import com.BancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
-import com.BancoDeSangue.dtos.response.NumeroDeDoadoresPorEstadoResponse;
-import com.BancoDeSangue.dtos.response.PercentualObesidadePorIdadeResponse;
-import com.BancoDeSangue.dtos.response.PercentualObesidadeResponse;
-import com.BancoDeSangue.dtos.response.QuantidadeDeDoadoresPossiveisResponse;
-import com.BancoDeSangue.service.EstadoService;
-import com.BancoDeSangue.service.MediaIdadePorTipoSanguineoService;
-import com.BancoDeSangue.service.PercentualObesidadePorIdadeService;
-import com.BancoDeSangue.service.PercentualObesidadeService;
-import com.BancoDeSangue.service.QuantidadeDeDoadoresPossiveisService;
+import com.bancoDeSangue.dtos.response.EstadoResponse;
+import com.bancoDeSangue.dtos.response.MediaIdadePorTipoSanguineoResponse;
+import com.bancoDeSangue.dtos.response.NumeroDeDoadoresPorEstadoResponse;
+import com.bancoDeSangue.dtos.response.PercentualObesidadePorIdadeResponse;
+import com.bancoDeSangue.dtos.response.PercentualObesidadeResponse;
+import com.bancoDeSangue.dtos.response.QuantidadeDeDoadoresPossiveisResponse;
+import com.bancoDeSangue.service.EstadoService;
+import com.bancoDeSangue.service.MediaIdadePorTipoSanguineoService;
+import com.bancoDeSangue.service.PercentualObesidadePorIdadeService;
+import com.bancoDeSangue.service.PercentualObesidadeService;
+import com.bancoDeSangue.service.QuantidadeDeDoadoresPossiveisService;
 import lombok.RequiredArgsConstructor;
 
 @RestController

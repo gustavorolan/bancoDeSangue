@@ -1,4 +1,4 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import java.util.Collection;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.response.QuantidadeDeDoadoresPossiveisResponse;
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.QuantidadeDeDoadoresPossiveisService;
-import com.BancoDeSangue.service.tipoSanguineo.TipoSanguineoExecutorService;
+import com.bancoDeSangue.dtos.response.QuantidadeDeDoadoresPossiveisResponse;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.QuantidadeDeDoadoresPossiveisService;
+import com.bancoDeSangue.service.tipoSanguineo.TipoSanguineoExecutorService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

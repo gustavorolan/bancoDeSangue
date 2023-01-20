@@ -1,11 +1,11 @@
-package com.BancoDeSangue.security.service;
+package com.bancoDeSangue.security.service;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.model.Usuario;
-import com.BancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.model.Usuario;
+import com.bancoDeSangue.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

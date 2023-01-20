@@ -1,10 +1,10 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
-import static com.BancoDeSangue.model.Estado.*;
+import static com.bancoDeSangue.model.Estado.*;
 
 import java.util.List;
 
-import com.BancoDeSangue.dtos.response.EstadoResponse;
+import com.bancoDeSangue.dtos.response.EstadoResponse;
 
 public class EstadoResponseFactory {
 	public static List<EstadoResponse> obter(){

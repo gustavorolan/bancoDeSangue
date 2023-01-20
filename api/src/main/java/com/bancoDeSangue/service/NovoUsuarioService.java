@@ -1,8 +1,8 @@
-package com.BancoDeSangue.service;
+package com.bancoDeSangue.service;
 
 import java.util.List;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
 
 public interface NovoUsuarioService {
 	Long criar(CriarNovoUsuarioRequest request);

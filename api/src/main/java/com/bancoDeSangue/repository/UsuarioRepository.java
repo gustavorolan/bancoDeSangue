@@ -1,4 +1,4 @@
-package com.BancoDeSangue.repository;
+package com.bancoDeSangue.repository;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.BancoDeSangue.model.Estado;
-import com.BancoDeSangue.model.Sexo;
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Sexo;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {

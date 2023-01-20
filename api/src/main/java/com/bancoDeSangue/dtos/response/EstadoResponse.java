@@ -1,6 +1,6 @@
-package com.BancoDeSangue.dtos.response;
+package com.bancoDeSangue.dtos.response;
 
-import com.BancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Estado;
 import lombok.Builder;
 import lombok.Data;
 

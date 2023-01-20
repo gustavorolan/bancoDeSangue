@@ -1,15 +1,15 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.response.EstadoResponse;
-import com.BancoDeSangue.dtos.response.NumeroDeDoadoresPorEstadoResponse;
-import com.BancoDeSangue.model.Estado;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.EstadoService;
+import com.bancoDeSangue.dtos.response.EstadoResponse;
+import com.bancoDeSangue.dtos.response.NumeroDeDoadoresPorEstadoResponse;
+import com.bancoDeSangue.model.Estado;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.EstadoService;
 import lombok.RequiredArgsConstructor;
 
 @Service

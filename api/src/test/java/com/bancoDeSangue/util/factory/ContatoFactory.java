@@ -1,8 +1,8 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
-import com.BancoDeSangue.dtos.response.ContatoResponse;
-import com.BancoDeSangue.model.Contato;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.dtos.response.ContatoResponse;
+import com.bancoDeSangue.model.Contato;
+import com.bancoDeSangue.model.Usuario;
 
 public class ContatoFactory {
 	public static Contato.ContatoBuilder obterContatoBuilder(Usuario usuario) {

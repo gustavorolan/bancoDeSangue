@@ -1,9 +1,9 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
-import com.BancoDeSangue.dtos.response.EnderecoResponse;
-import com.BancoDeSangue.model.Endereco;
-import com.BancoDeSangue.model.Estado;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.dtos.response.EnderecoResponse;
+import com.bancoDeSangue.model.Endereco;
+import com.bancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Usuario;
 
 public class EnderecoFactory {
 	public static Endereco.EnderecoBuilder obterEnderecoBuilder(Usuario usuario){

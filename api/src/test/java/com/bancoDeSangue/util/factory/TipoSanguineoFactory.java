@@ -1,10 +1,10 @@
-package com.BancoDeSangue.util.factory;
+package com.bancoDeSangue.util.factory;
 
-import static com.BancoDeSangue.model.TipoSanguineo.*;
+import static com.bancoDeSangue.model.TipoSanguineo.*;
 
 import java.util.List;
 
-import com.BancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.model.TipoSanguineo;
 
 public class TipoSanguineoFactory {
 	public static List<TipoSanguineo> obterPossivelDoarAPositivo() {

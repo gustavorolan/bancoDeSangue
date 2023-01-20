@@ -1,4 +1,4 @@
-package com.BancoDeSangue.model;
+package com.bancoDeSangue.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

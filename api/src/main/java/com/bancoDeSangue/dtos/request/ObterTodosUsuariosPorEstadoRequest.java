@@ -1,8 +1,8 @@
-package com.BancoDeSangue.dtos.request;
+package com.bancoDeSangue.dtos.request;
 
 import javax.validation.constraints.NotNull;
 
-import com.BancoDeSangue.model.Estado;
+import com.bancoDeSangue.model.Estado;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.BancoDeSangue.mapper;
+package com.bancoDeSangue.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,17 +6,17 @@ import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
-import com.BancoDeSangue.dtos.response.ContatoResponse;
-import com.BancoDeSangue.dtos.response.EnderecoResponse;
-import com.BancoDeSangue.dtos.response.InformacoesPessoaisResponse;
-import com.BancoDeSangue.dtos.response.UsuarioResponse;
-import com.BancoDeSangue.model.Endereco;
-import com.BancoDeSangue.model.Contato;
-import com.BancoDeSangue.model.InformacoesPessoais;
-import com.BancoDeSangue.model.Sexo;
-import com.BancoDeSangue.model.TipoSanguineo;
-import com.BancoDeSangue.model.Usuario;
+import com.bancoDeSangue.dtos.request.CriarNovoUsuarioRequest;
+import com.bancoDeSangue.dtos.response.ContatoResponse;
+import com.bancoDeSangue.dtos.response.EnderecoResponse;
+import com.bancoDeSangue.dtos.response.InformacoesPessoaisResponse;
+import com.bancoDeSangue.dtos.response.UsuarioResponse;
+import com.bancoDeSangue.model.Endereco;
+import com.bancoDeSangue.model.Contato;
+import com.bancoDeSangue.model.InformacoesPessoais;
+import com.bancoDeSangue.model.Sexo;
+import com.bancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.model.Usuario;
 
 @Service
 public class UsuarioMapper {

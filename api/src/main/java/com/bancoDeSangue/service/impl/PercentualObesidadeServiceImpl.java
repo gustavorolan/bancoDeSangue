@@ -1,14 +1,14 @@
-package com.BancoDeSangue.service.impl;
+package com.bancoDeSangue.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.BancoDeSangue.dtos.response.PercentualObesidadeResponse;
-import com.BancoDeSangue.model.Sexo;
-import com.BancoDeSangue.repository.UsuarioRepository;
-import com.BancoDeSangue.service.PercentualObesidadeService;
+import com.bancoDeSangue.dtos.response.PercentualObesidadeResponse;
+import com.bancoDeSangue.model.Sexo;
+import com.bancoDeSangue.repository.UsuarioRepository;
+import com.bancoDeSangue.service.PercentualObesidadeService;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -1,7 +1,6 @@
-package com.BancoDeSangue.dtos.response;
+package com.bancoDeSangue.dtos.response;
 
-import com.BancoDeSangue.model.Sexo;
-import com.BancoDeSangue.model.TipoSanguineo;
+import com.bancoDeSangue.model.Sexo;
 import lombok.Builder;
 import lombok.Data;
 
